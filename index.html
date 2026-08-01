@@ -1,10 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gasterpz App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gasterpz Store</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 15px;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#cart {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Ciao!</h1>
-  <p>La mia Web App è online.</p>
+
+<h1>🛒 Gasterpz Store</h1>
+
+<div class="product">
+<img src="https://via.placeholder.com/400">
+<h2>Prodotto 1</h2>
+<p>Descrizione prodotto</p>
+<p>€10</p>
+<button onclick="add('Prodotto 1',10)">Aggiungi al carrello</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/400">
+<h2>Prodotto 2</h2>
+<p>Descrizione prodotto</p>
+<p>€20</p>
+<button onclick="add('Prodotto 2',20)">Aggiungi al carrello</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/400">
+<h2>Prodotto 3</h2>
+<p>Descrizione prodotto</p>
+<p>€30</p>
+<button onclick="add('Prodotto 3',30)">Aggiungi al carrello</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/400">
+<h2>Prodotto 4</h2>
+<p>Descrizione prodotto</p>
+<p>€40</p>
+<button onclick="add('Prodotto 4',40)">Aggiungi al carrello</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/400">
+<h2>Prodotto 5</h2>
+<p>Descrizione prodotto</p>
+<p>€50</p>
+<button onclick="add('Prodotto 5',50)">Aggiungi al carrello</button>
+</div>
+
+
+<div id="cart">
+<h2>🛒 Carrello</h2>
+<p id="items">Vuoto</p>
+<h3 id="total">Totale: €0</h3>
+<button onclick="order()">Invia ordine</button>
+</div>
+
+
+<script>
+
+let cart=[];
+let total=0;
+
+function add(name,price){
+ cart.push(name);
+ total+=price;
+
+ document.getElementById("items").innerHTML=cart.join("<br>");
+ document.getElementById("total").innerHTML="Totale: €"+total;
+}
+
+function order(){
+
+let text="Ordine Gasterpz:%0A"+cart.join("%0A")+"%0ATotale €"+total;
+
+window.open(
+"https://t.me/TUO_USERNAME_TELEGRAM?text="+text
+);
+
+}
+
+</script>
+
 </body>
 </html>
