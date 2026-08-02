@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Gasterpz</title>
@@ -10,27 +11,49 @@
 body{
 font-family:Arial,sans-serif;
 margin:0;
-background:#f2f2f2;
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("IMG_0919.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
+
+
+/* LOGO IN ALTO */
 
 .hero{
 text-align:center;
+padding:20px;
 }
+
+
+.logo-card{
+background:white;
+border-radius:20px;
+padding:15px;
+}
+
 
 .logo{
 width:100%;
-height:350px;
+height:300px;
 object-fit:cover;
+border-radius:15px;
 display:block;
 }
+
 
 h1{
 font-size:45px;
 letter-spacing:6px;
 text-align:center;
 margin:20px 0;
+color:white;
 }
 
+
+/* PRODOTTI */
 
 .container{
 padding:15px;
@@ -71,6 +94,8 @@ margin-top:8px;
 }
 
 
+/* FINESTRA PRODOTTO */
+
 .box{
 display:none;
 position:fixed;
@@ -83,12 +108,15 @@ border-radius:20px;
 }
 
 
+/* CARRELLO */
+
 .cart{
 margin-top:20px;
 background:white;
 padding:15px;
 border-radius:15px;
 }
+
 
 </style>
 
@@ -100,17 +128,28 @@ border-radius:15px;
 
 <div class="hero">
 
+
+<div class="logo-card">
+
 <img class="logo" src="IMG_0919.png">
+
+</div>
+
 
 <h1>GASTERPZ</h1>
 
+
 </div>
+
+
+
 
 
 <div class="container">
 
 
 <div class="products">
+
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
@@ -146,41 +185,73 @@ border-radius:15px;
 <button onclick="openBox('Prodotto 5')">Apri</button>
 </div>
 
+
 </div>
+
 
 
 <div class="cart">
+
 <h2>🛒 Carrello</h2>
+
 <p id="cart">Vuoto</p>
+
 </div>
 
 
+
 </div>
+
+
 
 
 
 <div class="box" id="box">
 
+
 <h2 id="nome"></h2>
 
-<p>Scegli opzione:</p>
 
-<button onclick="addCart('Opzione 1')">Opzione 1 - Prezzo</button>
+<p>Scegli quantità:</p>
 
-<button onclick="addCart('Opzione 2')">Opzione 2 - Prezzo</button>
 
-<button onclick="addCart('Opzione 3')">Opzione 3 - Prezzo</button>
+<button onclick="addCart('100g - Prezzo')">
+100g - Prezzo
+</button>
 
-<button onclick="closeBox()">Chiudi</button>
+
+<button onclick="addCart('200g - Prezzo')">
+200g - Prezzo
+</button>
+
+
+<button onclick="addCart('500g - Prezzo')">
+500g - Prezzo
+</button>
+
+
+<button onclick="addCart('1kg - Prezzo')">
+1kg - Prezzo
+</button>
+
+
+<button onclick="closeBox()">
+Chiudi
+</button>
+
 
 </div>
 
 
 
+
+
 <script>
+
 
 let prodotto="";
 let lista=[];
+
 
 
 function openBox(nome){
@@ -194,11 +265,13 @@ document.getElementById("box").style.display="block";
 }
 
 
+
 function closeBox(){
 
 document.getElementById("box").style.display="none";
 
 }
+
 
 
 function addCart(opzione){
@@ -210,6 +283,7 @@ document.getElementById("cart").innerHTML=lista.join("<br>");
 closeBox();
 
 }
+
 
 
 </script>
