@@ -21,7 +21,6 @@ background-attachment:fixed;
 
 
 .hero{
-text-align:center;
 padding:20px;
 }
 
@@ -40,7 +39,6 @@ object-fit:cover;
 border-radius:15px;
 display:block;
 }
-
 
 
 .container{
@@ -82,7 +80,6 @@ margin-top:8px;
 }
 
 
-
 .box{
 display:none;
 position:fixed;
@@ -95,14 +92,12 @@ border-radius:20px;
 }
 
 
-
 .cart{
 margin-top:20px;
 background:white;
 padding:15px;
 border-radius:15px;
 }
-
 
 
 </style>
@@ -170,7 +165,6 @@ border-radius:15px;
 
 
 
-
 <div class="cart">
 
 <h2>🛒 Carrello</h2>
@@ -196,26 +190,21 @@ ORDINA
 
 <p>Scegli quantità:</p>
 
-
 <button onclick="addCart('100g - Prezzo')">
 100g - Prezzo
 </button>
-
 
 <button onclick="addCart('200g - Prezzo')">
 200g - Prezzo
 </button>
 
-
 <button onclick="addCart('500g - Prezzo')">
 500g - Prezzo
 </button>
 
-
 <button onclick="addCart('1kg - Prezzo')">
 1kg - Prezzo
 </button>
-
 
 <button onclick="closeBox()">
 Chiudi
@@ -232,7 +221,6 @@ Chiudi
 
 let prodotto="";
 let lista=[];
-
 
 
 function openBox(nome){
@@ -269,12 +257,13 @@ closeBox();
 
 function order(){
 
-let messaggio = "Ciao, vorrei ordinare:\n\n" + lista.join("\n");
+let messaggio="Ciao, vorrei ordinare:\n\n"+lista.join("\n");
 
 
 window.open(
-"https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio)
+"https://t.me/Gasterpzzz?text="+encodeURIComponent(messaggio)
 );
+
 
 }
 
