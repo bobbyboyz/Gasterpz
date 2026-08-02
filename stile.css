@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GasTerpz</title>
+
+<link rel="stylesheet" href="stile.css">
+
+</head>
+
+<body>
+
+<header>
+
+<img src="IMG_0919.png" class="logo">
+
+</header>
+
+<div id="app"></div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
