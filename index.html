@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>GasTerpz</title>
@@ -9,14 +8,10 @@
 <style>
 
 body{
-font-family:Arial,sans-serif;
+font-family:Arial;
 margin:0;
 background:#000;
 color:white;
-}
-
-.hero{
-text-align:center;
 }
 
 .logo{
@@ -31,7 +26,7 @@ margin:15px;
 padding:15px;
 }
 
-.products{
+.grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:15px;
@@ -46,236 +41,206 @@ text-align:center;
 
 .card img{
 width:100%;
-height:130px;
+height:120px;
 object-fit:cover;
 border-radius:10px;
 }
 
 button{
-background:white;
-color:black;
-border:0;
-padding:12px;
-border-radius:10px;
 width:100%;
+padding:12px;
+border:0;
+border-radius:10px;
 margin-top:10px;
 font-weight:bold;
 }
 
-.box{
+
+#page2,#page3{
 display:none;
-position:fixed;
-left:5%;
-top:15%;
-width:90%;
-background:#111;
-padding:20px;
-border-radius:20px;
 }
 
-.cart{
-background:#111;
-padding:15px;
-margin-top:20px;
-border-radius:15px;
-}
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<div class="hero">
-
 <img class="logo" src="IMG_0919.png">
-
-</div>
-
 
 
 <div class="container">
 
 
-<div class="products">
+<div id="home">
+
+<div class="grid">
 
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>Weed 🌿</h3>
-<button onclick="openBox('Weed 🌿')">
-Apri
-</button>
+<h2>Weed 🌿</h2>
+<button onclick="categoria('weed')">Apri</button>
 </div>
-
 
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>Frozen/Static ⚡️🧊</h3>
-<button onclick="openBox('Frozen/Static ⚡️🧊')">
-Apri
-</button>
+<h2>Frozen/Static ⚡️🧊</h2>
+<button onclick="categoria('frozen')">Apri</button>
 </div>
-
 
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>Estrazioni 🍯</h3>
-<button onclick="openBox('Estrazioni 🍯')">
-Apri
-</button>
+<h2>Dry Work 🍫</h2>
+<button onclick="categoria('dry')">Apri</button>
 </div>
-
 
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>Dry Work 🍫</h3>
-<button onclick="openBox('Dry Work 🍫')">
-Apri
-</button>
+<h2>Estrazioni 🍯</h2>
+<button onclick="categoria('estrazioni')">Apri</button>
 </div>
-
 
 
 <div class="card">
-<img src="https://via.placeholder.com/300">
-<h3>Vape Pen 💨</h3>
-<button onclick="openBox('Vape Pen 💨')">
-Apri
-</button>
+<h2>Vape Pen 💨</h2>
+<button onclick="categoria('vape')">Apri</button>
 </div>
 
 
 </div>
 
+</div>
 
-<div class="cart">
 
-<h2>🛒 Carrello</h2>
 
-<p id="cart">
-Vuoto
-</p>
+<div id="page2">
+
+<h2 id="titolo"></h2>
+
+<div class="grid" id="prodotti"></div>
+
+<button onclick="home()">⬅ Torna indietro</button>
+
+</div>
+
+
+
+<div id="page3">
+
+<h2 id="prodotto"></h2>
+
+<button>100g</button>
+<button>200g</button>
+<button>500g</button>
+<button>1kg</button>
+
+<button onclick="home()">⬅ Torna indietro</button>
 
 </div>
 
 
 </div>
-
-
-
-<div class="box" id="box"></div>
 
 
 
 <script>
 
 
-let prodotto="";
-let lista=[];
+let dati={
+
+weed:[
+"Prodotto Weed 1",
+"Prodotto Weed 2",
+"Prodotto Weed 3"
+],
+
+frozen:[
+"Prodotto Frozen 1",
+"Prodotto Frozen 2",
+"Prodotto Frozen 3"
+],
+
+dry:[
+"Prodotto Dry 1",
+"Prodotto Dry 2",
+"Prodotto Dry 3"
+],
+
+estrazioni:[
+"Prodotto Estrazione"
+],
+
+vape:[
+"Vape Pen"
+]
+
+};
 
 
 
-function openBox(nome){
+function categoria(tipo){
 
-prodotto=nome;
+home();
 
-let box=document.getElementById("box");
+document.getElementById("home").style.display="none";
+
+document.getElementById("page2").style.display="block";
 
 
-if(nome=="Vape Pen 💨"){
+document.getElementById("titolo").innerHTML=tipo;
 
 
-box.innerHTML=
+let box="";
 
-`
-<h2>${nome}</h2>
 
-<button onclick="addCart('1 pezzo')">
-1 pezzo
+dati[tipo].forEach(function(nome){
+
+box+=`
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>${nome}</h3>
+
+<button onclick="prodotto('${nome}')">
+Apri
 </button>
 
-<button onclick="addCart('2 pezzi')">
-2 pezzi
-</button>
-
-<button onclick="addCart('5 pezzi')">
-5 pezzi
-</button>
-
-<button onclick="addCart('10 pezzi')">
-10 pezzi
-</button>
-
-<button onclick="closeBox()">
-Chiudi
-</button>
+</div>
 
 `;
 
-
-}else{
-
-
-box.innerHTML=
-
-`
-<h2>${nome}</h2>
-
-<button onclick="addCart('100g')">
-100g
-</button>
-
-<button onclick="addCart('200g')">
-200g
-</button>
-
-<button onclick="addCart('500g')">
-500g
-</button>
-
-<button onclick="addCart('1kg')">
-1kg
-</button>
-
-<button onclick="closeBox()">
-Chiudi
-</button>
-
-`;
-
-}
+});
 
 
-box.style.display="block";
+document.getElementById("prodotti").innerHTML=box;
 
 }
 
 
 
+function prodotto(nome){
 
-function closeBox(){
+document.getElementById("page2").style.display="none";
 
-document.getElementById("box").style.display="none";
+document.getElementById("page3").style.display="block";
+
+document.getElementById("prodotto").innerHTML=nome;
 
 }
 
 
 
+function home(){
 
-function addCart(opzione){
+document.getElementById("home").style.display="block";
 
-lista.push(prodotto+" - "+opzione);
+document.getElementById("page2").style.display="none";
 
-document.getElementById("cart").innerHTML =
-lista.join("<br>");
-
-closeBox();
+document.getElementById("page3").style.display="none";
 
 }
 
