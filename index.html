@@ -1,252 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GasTerpz</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-body{
-font-family:Arial;
-margin:0;
-background:#000;
-color:white;
-}
-
-.logo{
-width:90%;
-height:250px;
-object-fit:cover;
-border-radius:20px;
-margin:15px;
-}
-
-.container{
-padding:15px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-.card{
-background:#111;
-border-radius:15px;
-padding:10px;
-text-align:center;
-}
-
-.card img{
-width:100%;
-height:120px;
-object-fit:cover;
-border-radius:10px;
-}
-
-button{
-width:100%;
-padding:12px;
-border:0;
-border-radius:10px;
-margin-top:10px;
-font-weight:bold;
-}
-
-
-#page2,#page3{
-display:none;
-}
-
-
-</style>
 </head>
-
 
 <body>
 
+<header>
 
-<img class="logo" src="IMG_0919.png">
+<img src="IMG_0919.png" class="logo">
 
+</header>
 
-<div class="container">
+<div id="app"></div>
 
-
-<div id="home">
-
-<div class="grid">
-
-
-<div class="card">
-<h2>Weed 🌿</h2>
-<button onclick="categoria('weed')">Apri</button>
-</div>
-
-
-<div class="card">
-<h2>Frozen/Static ⚡️🧊</h2>
-<button onclick="categoria('frozen')">Apri</button>
-</div>
-
-
-<div class="card">
-<h2>Dry Work 🍫</h2>
-<button onclick="categoria('dry')">Apri</button>
-</div>
-
-
-<div class="card">
-<h2>Estrazioni 🍯</h2>
-<button onclick="categoria('estrazioni')">Apri</button>
-</div>
-
-
-<div class="card">
-<h2>Vape Pen 💨</h2>
-<button onclick="categoria('vape')">Apri</button>
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<div id="page2">
-
-<h2 id="titolo"></h2>
-
-<div class="grid" id="prodotti"></div>
-
-<button onclick="home()">⬅ Torna indietro</button>
-
-</div>
-
-
-
-<div id="page3">
-
-<h2 id="prodotto"></h2>
-
-<button>100g</button>
-<button>200g</button>
-<button>500g</button>
-<button>1kg</button>
-
-<button onclick="home()">⬅ Torna indietro</button>
-
-</div>
-
-
-</div>
-
-
-
-<script>
-
-
-let dati={
-
-weed:[
-"Prodotto Weed 1",
-"Prodotto Weed 2",
-"Prodotto Weed 3"
-],
-
-frozen:[
-"Prodotto Frozen 1",
-"Prodotto Frozen 2",
-"Prodotto Frozen 3"
-],
-
-dry:[
-"Prodotto Dry 1",
-"Prodotto Dry 2",
-"Prodotto Dry 3"
-],
-
-estrazioni:[
-"Prodotto Estrazione"
-],
-
-vape:[
-"Vape Pen"
-]
-
-};
-
-
-
-function categoria(tipo){
-
-home();
-
-document.getElementById("home").style.display="none";
-
-document.getElementById("page2").style.display="block";
-
-
-document.getElementById("titolo").innerHTML=tipo;
-
-
-let box="";
-
-
-dati[tipo].forEach(function(nome){
-
-box+=`
-
-<div class="card">
-
-<img src="https://via.placeholder.com/300">
-
-<h3>${nome}</h3>
-
-<button onclick="prodotto('${nome}')">
-Apri
-</button>
-
-</div>
-
-`;
-
-});
-
-
-document.getElementById("prodotti").innerHTML=box;
-
-}
-
-
-
-function prodotto(nome){
-
-document.getElementById("page2").style.display="none";
-
-document.getElementById("page3").style.display="block";
-
-document.getElementById("prodotto").innerHTML=nome;
-
-}
-
-
-
-function home(){
-
-document.getElementById("home").style.display="block";
-
-document.getElementById("page2").style.display="none";
-
-document.getElementById("page3").style.display="none";
-
-}
-
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
+
 </html>
