@@ -15,11 +15,9 @@ background:#000;
 color:white;
 }
 
-
 .hero{
 text-align:center;
 }
-
 
 .logo{
 width:90%;
@@ -29,11 +27,9 @@ border-radius:20px;
 margin:15px;
 }
 
-
 .container{
 padding:15px;
 }
-
 
 .products{
 display:grid;
@@ -41,15 +37,12 @@ grid-template-columns:1fr 1fr;
 gap:15px;
 }
 
-
 .card{
 background:#111;
 border-radius:15px;
 padding:10px;
 text-align:center;
-border:1px solid #333;
 }
-
 
 .card img{
 width:100%;
@@ -58,9 +51,7 @@ object-fit:cover;
 border-radius:10px;
 }
 
-
 button{
-
 background:white;
 color:black;
 border:0;
@@ -69,12 +60,9 @@ border-radius:10px;
 width:100%;
 margin-top:10px;
 font-weight:bold;
-
 }
 
-
 .box{
-
 display:none;
 position:fixed;
 left:5%;
@@ -83,20 +71,14 @@ width:90%;
 background:#111;
 padding:20px;
 border-radius:20px;
-border:1px solid #444;
-
 }
 
-
 .cart{
-
 background:#111;
 padding:15px;
 margin-top:20px;
 border-radius:15px;
-
 }
-
 
 </style>
 
@@ -123,7 +105,9 @@ border-radius:15px;
 <div class="card">
 <img src="https://via.placeholder.com/300">
 <h3>Weed 🌿</h3>
-<button onclick="openBox('Weed 🌿')">Apri</button>
+<button onclick="openBox('Weed 🌿')">
+Apri
+</button>
 </div>
 
 
@@ -131,7 +115,9 @@ border-radius:15px;
 <div class="card">
 <img src="https://via.placeholder.com/300">
 <h3>Frozen/Static ⚡️🧊</h3>
-<button onclick="openBox('Frozen/Static ⚡️🧊')">Apri</button>
+<button onclick="openBox('Frozen/Static ⚡️🧊')">
+Apri
+</button>
 </div>
 
 
@@ -139,7 +125,9 @@ border-radius:15px;
 <div class="card">
 <img src="https://via.placeholder.com/300">
 <h3>Estrazioni 🍯</h3>
-<button onclick="openBox('Estrazioni 🍯')">Apri</button>
+<button onclick="openBox('Estrazioni 🍯')">
+Apri
+</button>
 </div>
 
 
@@ -147,7 +135,9 @@ border-radius:15px;
 <div class="card">
 <img src="https://via.placeholder.com/300">
 <h3>Dry Work 🍫</h3>
-<button onclick="openBox('Dry Work 🍫')">Apri</button>
+<button onclick="openBox('Dry Work 🍫')">
+Apri
+</button>
 </div>
 
 
@@ -155,19 +145,22 @@ border-radius:15px;
 <div class="card">
 <img src="https://via.placeholder.com/300">
 <h3>Vape Pen 💨</h3>
-<button onclick="openBox('Vape Pen 💨')">Apri</button>
+<button onclick="openBox('Vape Pen 💨')">
+Apri
+</button>
 </div>
 
 
 </div>
-
 
 
 <div class="cart">
 
 <h2>🛒 Carrello</h2>
 
-<p id="cart">Vuoto</p>
+<p id="cart">
+Vuoto
+</p>
 
 </div>
 
@@ -176,39 +169,7 @@ border-radius:15px;
 
 
 
-
-<div class="box" id="box">
-
-
-<h2 id="nome"></h2>
-
-
-<button onclick="addCart('100g')">
-100g
-</button>
-
-
-<button onclick="addCart('200g')">
-200g
-</button>
-
-
-<button onclick="addCart('500g')">
-500g
-</button>
-
-
-<button onclick="addCart('1kg')">
-1kg
-</button>
-
-
-<button onclick="closeBox()">
-Chiudi
-</button>
-
-
-</div>
+<div class="box" id="box"></div>
 
 
 
@@ -224,11 +185,77 @@ function openBox(nome){
 
 prodotto=nome;
 
-document.getElementById("nome").innerHTML=nome;
+let box=document.getElementById("box");
 
-document.getElementById("box").style.display="block";
+
+if(nome=="Vape Pen 💨"){
+
+
+box.innerHTML=
+
+`
+<h2>${nome}</h2>
+
+<button onclick="addCart('1 pezzo')">
+1 pezzo
+</button>
+
+<button onclick="addCart('2 pezzi')">
+2 pezzi
+</button>
+
+<button onclick="addCart('5 pezzi')">
+5 pezzi
+</button>
+
+<button onclick="addCart('10 pezzi')">
+10 pezzi
+</button>
+
+<button onclick="closeBox()">
+Chiudi
+</button>
+
+`;
+
+
+}else{
+
+
+box.innerHTML=
+
+`
+<h2>${nome}</h2>
+
+<button onclick="addCart('100g')">
+100g
+</button>
+
+<button onclick="addCart('200g')">
+200g
+</button>
+
+<button onclick="addCart('500g')">
+500g
+</button>
+
+<button onclick="addCart('1kg')">
+1kg
+</button>
+
+<button onclick="closeBox()">
+Chiudi
+</button>
+
+`;
 
 }
+
+
+box.style.display="block";
+
+}
+
 
 
 
@@ -240,14 +267,13 @@ document.getElementById("box").style.display="none";
 
 
 
+
 function addCart(opzione){
 
 lista.push(prodotto+" - "+opzione);
 
-
-document.getElementById("cart").innerHTML=
+document.getElementById("cart").innerHTML =
 lista.join("<br>");
-
 
 closeBox();
 
