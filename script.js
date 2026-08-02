@@ -36,7 +36,7 @@ function avviaApp() {
 
             <div class="menu">
                 ${categorie.map((cat) => `
-                    <button onclick="apriCategoria('${cat.id}')">
+                    <button onclick="mostra prodotti('${cat.id}')">
                         ${cat.nome}
                     </button>
                 `).join("")}
