@@ -1,30 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-<!DOCTYPE html>
-<html lang="it">
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
 
-<head>
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+}
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+.logo {
+    width: 180px;
+    height: auto;
+    border-radius: 20px;
+}
 
-<title>GasTerpz</title>
+#app {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
 
-<link rel="stylesheet" href="stile.css">
+.card {
+    background: #111;
+    border: 1px solid #2ecc71;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-</head>
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-<body>
+p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 15px;
+}
 
-<header>
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #2ecc71;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-<img src="IMG_0919.png" class="logo">
+button:hover {
+    opacity: 0.8;
+}
 
-</header>
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background: #222;
+    color: white;
+    margin-bottom: 10px;
+}
 
-<div id="app"></div>
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-<script src="script.js"></script>
+.product {
+    background: #151515;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
 
-</body>
-
-</html>
+.price {
+    color: #2ecc71;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
