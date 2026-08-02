@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Gasterpz</title>
+<title>GasTerpz</title>
 
 <style>
 
@@ -12,29 +12,22 @@ body{
 font-family:Arial,sans-serif;
 margin:0;
 background:#000;
+color:white;
 }
 
 
 .hero{
-padding:20px;
-}
-
-
-.logo-card{
-background:white;
-border-radius:20px;
-padding:15px;
+text-align:center;
 }
 
 
 .logo{
-width:100%;
-height:300px;
+width:90%;
+height:250px;
 object-fit:cover;
-border-radius:15px;
-display:block;
+border-radius:20px;
+margin:15px;
 }
-
 
 
 .container{
@@ -45,56 +38,63 @@ padding:15px;
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px;
+gap:15px;
 }
 
 
 .card{
-background:white;
+background:#111;
 border-radius:15px;
 padding:10px;
 text-align:center;
+border:1px solid #333;
 }
 
 
 .card img{
 width:100%;
-height:120px;
+height:130px;
 object-fit:cover;
 border-radius:10px;
 }
 
 
 button{
-background:#000;
-color:white;
+
+background:white;
+color:black;
 border:0;
 padding:12px;
 border-radius:10px;
 width:100%;
-margin-top:8px;
+margin-top:10px;
+font-weight:bold;
+
 }
 
 
-
 .box{
+
 display:none;
 position:fixed;
 left:5%;
 top:15%;
 width:90%;
-background:white;
+background:#111;
 padding:20px;
 border-radius:20px;
+border:1px solid #444;
+
 }
 
 
-
 .cart{
-margin-top:20px;
-background:white;
+
+background:#111;
 padding:15px;
+margin-top:20px;
 border-radius:15px;
+
 }
 
 
@@ -108,11 +108,7 @@ border-radius:15px;
 
 <div class="hero">
 
-<div class="logo-card">
-
 <img class="logo" src="IMG_0919.png">
-
-</div>
 
 </div>
 
@@ -126,41 +122,44 @@ border-radius:15px;
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
-<h3>Prodotto 1</h3>
-<button onclick="openBox('Prodotto 1')">Apri</button>
+<h3>Weed 🌿</h3>
+<button onclick="openBox('Weed 🌿')">Apri</button>
 </div>
+
 
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
-<h3>Prodotto 2</h3>
-<button onclick="openBox('Prodotto 2')">Apri</button>
+<h3>Frozen/Static ⚡️🧊</h3>
+<button onclick="openBox('Frozen/Static ⚡️🧊')">Apri</button>
 </div>
+
 
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
-<h3>Prodotto 3</h3>
-<button onclick="openBox('Prodotto 3')">Apri</button>
+<h3>Estrazioni 🍯</h3>
+<button onclick="openBox('Estrazioni 🍯')">Apri</button>
 </div>
+
 
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
-<h3>Prodotto 4</h3>
-<button onclick="openBox('Prodotto 4')">Apri</button>
+<h3>Dry Work 🍫</h3>
+<button onclick="openBox('Dry Work 🍫')">Apri</button>
 </div>
+
 
 
 <div class="card">
 <img src="https://via.placeholder.com/300">
-<h3>Prodotto 5</h3>
-<button onclick="openBox('Prodotto 5')">Apri</button>
+<h3>Vape Pen 💨</h3>
+<button onclick="openBox('Vape Pen 💨')">Apri</button>
 </div>
 
 
 </div>
-
 
 
 
@@ -170,43 +169,37 @@ border-radius:15px;
 
 <p id="cart">Vuoto</p>
 
-<button onclick="order()">
-ORDINA
-</button>
-
 </div>
 
 
 </div>
-
 
 
 
 
 <div class="box" id="box">
 
+
 <h2 id="nome"></h2>
 
-<p>Scegli quantità:</p>
 
-
-<button onclick="addCart('100g - Prezzo')">
-100g - Prezzo
+<button onclick="addCart('100g')">
+100g
 </button>
 
 
-<button onclick="addCart('200g - Prezzo')">
-200g - Prezzo
+<button onclick="addCart('200g')">
+200g
 </button>
 
 
-<button onclick="addCart('500g - Prezzo')">
-500g - Prezzo
+<button onclick="addCart('500g')">
+500g
 </button>
 
 
-<button onclick="addCart('1kg - Prezzo')">
-1kg - Prezzo
+<button onclick="addCart('1kg')">
+1kg
 </button>
 
 
@@ -216,8 +209,6 @@ Chiudi
 
 
 </div>
-
-
 
 
 
@@ -253,22 +244,12 @@ function addCart(opzione){
 
 lista.push(prodotto+" - "+opzione);
 
-document.getElementById("cart").innerHTML=lista.join("<br>");
+
+document.getElementById("cart").innerHTML=
+lista.join("<br>");
+
 
 closeBox();
-
-}
-
-
-
-function order(){
-
-let messaggio="Ciao, vorrei ordinare:\n\n"+lista.join("\n");
-
-
-window.open(
-"https://t.me/Gasterpzzz?text="+encodeURIComponent(messaggio)
-);
 
 }
 
