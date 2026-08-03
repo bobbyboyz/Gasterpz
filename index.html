@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GasTerpz</title>
+<title>Gasterpz</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,197 +13,42 @@
 
 <body>
 
-<div class="container">
+<div class="home">
 
 <!-- LOGO -->
 <div class="logo-box">
-    <img src="IMG_9609.png" alt="GasTerpz">
+<img src="IMG_0935.jpeg" alt="Gasterpz">
 </div>
 
 
 <!-- CATEGORIE -->
-
 <div class="categories">
 
-<button class="category-btn" onclick="openCategory('weed')">
+<a href="weed.html" class="category-box">
 Weed
-</button>
+</a>
 
-<button class="category-btn" onclick="openCategory('frozen')">
+<a href="frozen.html" class="category-box">
 Frozen / Static
-</button>
+</a>
 
-<button class="category-btn" onclick="openCategory('dry')">
+<a href="dry.html" class="category-box">
 Dry
-</button>
+</a>
 
-<button class="category-btn" onclick="openCategory('extract')">
+<a href="extract.html" class="category-box">
 Extract
-</button>
+</a>
 
-<button class="category-btn" onclick="openCategory('vape')">
+<a href="vape.html" class="category-box">
 Vape
-</button>
+</a>
+
+</div></div>
 
 </div>
-
-
-<!-- AREA PRODOTTI -->
-
-<div id="weed" class="product-section">
-
-<h2>Weed</h2>
-
-<div class="product">
-20g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-50g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-100g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-500g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-1000g <span>€ prezzo</span>
-</div>
-
-</div>
-<!-- FROZEN / STATIC -->
-
-<div id="frozen" class="product-section">
-
-<h2>Frozen / Static</h2>
-
-<div class="product">
-20g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-50g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-100g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-500g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-1000g <span>€ prezzo</span>
-</div>
-
-</div>
-
-
-
-<!-- DRY -->
-
-<div id="dry" class="product-section">
-
-<h2>Dry</h2>
-
-<div class="product">
-20g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-50g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-100g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-500g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-1000g <span>€ prezzo</span>
-</div>
-
-</div>
-<!-- EXTRACT -->
-
-<div id="extract" class="product-section">
-
-<h2>Extract</h2>
-
-<div class="product">
-20g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-50g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-100g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-500g <span>€ prezzo</span>
-</div>
-
-<div class="product">
-1000g <span>€ prezzo</span>
-</div>
-
-</div>
-
-
-
-<!-- VAPE -->
-
-<div id="vape" class="product-section">
-
-<h2>Vape</h2>
-
-<div class="product">
-1 pezzo <span>€ prezzo</span>
-</div>
-
-<div class="product">
-3 pezzi <span>€ prezzo</span>
-</div>
-
-<div class="product">
-5 pezzi <span>€ prezzo</span>
-</div>
-
-</div>
-
-
-
-</div>
-
-
-<script>
-
-function openCategory(category){
-
-let sections = document.querySelectorAll(".product-section");
-
-sections.forEach(section => {
-section.style.display = "none";
-});
-
-
-document.getElementById(category).style.display = "block";
-
-}
-
-</script>
 
 
 </body>
+
 </html>
