@@ -1,178 +1,126 @@
-const app = document.getElementById("app");
+/* ==========================
+   GASTERPZ
+   SCRIPT.JS
+========================== */
 
-const categorie = [
-    {
-        nome: "🌿 Weed",
-        immagine: "IMG_0933.png",
-        prodotti: [
-            "Weed Prodotto 1",
-            "Weed Prodotto 2",
-            "Weed Prodotto 3"
-        ]
-    },
-    {
-        nome: "❄️ Frozen",
-        immagine: "IMG_0931.png",
-        prodotti: [
-            "Frozen Prodotto 1",
-            "Frozen Prodotto 2",
-            "Frozen Prodotto 3"
-        ]
-    },
-    {
-        nome: "🍯 Estrazioni",
-        immagine: "",
-        prodotti: [
-            "Estrazione 1",
-            "Estrazione 2",
-            "Estrazione 3"
-        ]
-    },
-    {
-        nome: "🍫 Dry Work",
-        immagine: "",
-        prodotti: [
-            "Dry Work 1",
-            "Dry Work 2",
-            "Dry Work 3"
-        ]
-    },
-    {
-        nome: "💨 Vape Pen",
-        immagine: "",
-        prodotti: []
-    }
-];
+const tg = window.Telegram.WebApp;
 
+tg.expand();
 
-function home() {
+let cart = [];
+let total = 0;
 
-    app.innerHTML = `
+/* ==========================
+   APRI CATEGORIE
+========================== */
 
-    <div class="card">
+function hideAllPages() {
 
-    <h1>🔥 GasTerpz</h1>
+    document.getElementById("home").style.display = "none";
 
-    <div class="menu">
+    document.querySelectorAll(".page").forEach(page => {
 
-    ${categorie.map((cat, index) => `
+        page.style.display = "none";
 
-        <div class="product">
-
-        ${
-        cat.immagine 
-        ? <img src="${cat.immagine}" class="categoria-img">
-        : <div class="categoria-vuota">Foto presto</div>
-        }
-
-        <h3>${cat.nome}</h3>
-
-        <button onclick="apriCategoria(${index})">
-        Entra
-        </button>
-
-        </div>
-
-    `).join("")}
-
-    </div>
-
-    </div>
-
-    `;
-
-} function apriCategoria(index) {
-
-    let cat = categorie[index];
-
-
-    if (cat.nome.includes("Vape")) {
-
-        app.innerHTML = `
-
-        <div class="card">
-
-        <h2>${cat.nome}</h2>
-
-        <p>Sezione Vape Pen</p>
-
-        <button>
-        Ordina
-        </button>
-
-
-        <button onclick="home()">
-        ⬅ Torna indietro
-        </button>
-
-        </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    app.innerHTML = `
-
-    <div class="card">
-
-    <h2>${cat.nome}</h2>
-
-
-    <div class="menu">
-
-
-    ${cat.prodotti.map((prodotto) => `
-
-
-        <div class="product">
-
-
-        <div class="categoria-vuota">
-        Foto prodotto
-        </div>
-
-
-        <h3>${prodotto}</h3>
-
-
-        <p class="price">
-        Prezzo €
-        </p>
-
-
-        <button>
-        Ordina
-        </button>
-
-
-        </div>
-
-
-    `).join("")}
-
-
-    </div>
-
-
-    <button onclick="home()">
-    ⬅ Torna indietro
-    </button>
-
-
-    </div>
-
-    `;
-
-} function ordine(nome) {
-
-    alert("Hai selezionato: " + nome);
+    });
 
 }
 
+function openCategory(category) {
 
-// Avvio Mini App
+    hideAllPages();
 
-home();
+    document.getElementById(category).style.display = "block";
+
+}
+
+function goHome() {
+
+    document.querySelectorAll(".page").forEach(page => {
+
+        page.style.display = "none";
+
+    });
+
+    document.getElementById("home").style.display = "block";
+
+}
+
+/* ==========================
+   CARRELLO
+========================== */
+
+function toggleCart() {
+
+    document
+        .getElementById("cartPanel")
+        .classList
+        .toggle("open");
+
+}
+const prodotti = {
+  weed: [
+    {nome: "Weed", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+  ],
+  frozen: [
+    {nome: "Frozen/Static", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+  ],
+  dry: [
+    {nome: "Dry", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+  ],
+  extract: [
+    {nome: "Extract", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+  ],
+  vape: [
+    {nome: "Vape", quantita: ["1 pezzo", "3 pezzi", "5 pezzi"]}
+  ]
+};
+
+function apriCategoria(categoria) {
+  const contenuto = document.getElementById("prodotti");
+  contenuto.innerHTML = "";
+
+  prodotti[categoria].forEach(prodotto => {
+
+    let box = document.createElement("div");
+    box.className = "prodotto";
+
+    box.innerHTML = `
+      <h3>${prodotto.nome}</h3>
+      <div class="quantita">
+        ${prodotto.quantita.map(q => `
+          <button>${q}</button>
+        `).join("")}
+      </div>
+    `;
+
+    contenuto.appendChild(box);
+  });
+}
+// Apertura Telegram per invio ordine
+function inviaOrdine() {
+
+  const ordineSalvato = JSON.parse(
+    localStorage.getItem("ordine")
+  );
+
+  if (!ordineSalvato) {
+    alert("Seleziona prima un prodotto");
+    return;
+  }
+
+  const messaggio =
+    "Ciao, vorrei informazioni per: " +
+    ordineSalvato.prodotto +
+    " quantità: " +
+    ordineSalvato.quantita;
+
+  const username = "Gasterpzzz";
+
+  window.open(
+    "https://t.me/" +
+    username +
+    "?text=" +
+    encodeURIComponent(messaggio)
+  );
+}
