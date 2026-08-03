@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="style.css">
 
+
 <style>
 
 .product-grid {
@@ -21,51 +22,74 @@ padding:10px;
 
 
 .product-card {
-background:#ffffff;
-border-radius:15px;
-height:260px;
+
+background:white;
+border:2px solid #e5e5e5;
+border-radius:25px;
+height:150px;
 padding:10px;
 box-sizing:border-box;
+
 display:flex;
 flex-direction:column;
+align-items:center;
 justify-content:space-between;
-text-align:center;
+
 }
 
 
 .image-box {
-height:100px;
-border-radius:10px;
+
+width:45px;
+height:45px;
+
+border:2px solid #e5e5e5;
+border-radius:12px;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
+font-size:8px;
+
 }
 
 
 .product-name {
-font-size:14px;
+
+font-size:12px;
 font-weight:bold;
+
 }
 
 
 .product-buttons {
+
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:5px;
+gap:3px;
+
 }
 
 
 .product-buttons button {
-font-size:10px;
-padding:5px;
+
+font-size:9px;
+padding:3px 5px;
+border-radius:8px;
+
 }
+
 
 </style>
 
+
 </head>
 
+
 <body>
+
 
 <div class="home">
 
@@ -76,33 +100,6 @@ padding:5px;
 <div class="product-grid">
 
 
-<div class="product-card">
-
-
-<div class="image-box">
-FOTO
-</div>
-
-
-<div class="product-name">
-NOME ERBA
-</div>
-
-
-<div class="product-buttons">
-
-<button>20g<br>€</button>
-<button>50g<br>€</button>
-<button>100g<br>€</button>
-<button>500g<br>€</button>
-<button>1000g<br>€</button>
-
-</div>
-
-
-</div>
-
-
 
 <div class="product-card">
 
@@ -119,11 +116,27 @@ NOME ERBA
 
 <div class="product-buttons">
 
-<button>20g<br>€</button>
-<button>50g<br>€</button>
-<button>100g<br>€</button>
-<button>500g<br>€</button>
-<button>1000g<br>€</button>
+
+<button onclick="ordine('NOME ERBA','20g','€')">
+20g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','50g','€')">
+50g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','100g','€')">
+100g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','500g','€')">
+500g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','1000g','€')">
+1000g<br>€
+</button>
+
 
 </div>
 
@@ -131,10 +144,97 @@ NOME ERBA
 </div>
 
 
+
+
+<div class="product-card">
+
+
+<div class="image-box">
+FOTO
+</div>
+
+
+<div class="product-name">
+NOME ERBA
+</div>
+
+
+<div class="product-buttons">
+
+
+<button onclick="ordine('NOME ERBA','20g','€')">
+20g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','50g','€')">
+50g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','100g','€')">
+100g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','500g','€')">
+500g<br>€
+</button>
+
+<button onclick="ordine('NOME ERBA','1000g','€')">
+1000g<br>€
+</button>
+
+
 </div>
 
 
 </div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+function ordine(prodotto, quantita, prezzo) {
+
+
+let conferma = confirm(
+"Vuoi ordinare?\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo
+);
+
+
+if(conferma){
+
+
+let messaggio =
+"Nuovo ordine\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo;
+
+
+window.open(
+"https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio),
+"_blank"
+);
+
+
+}
+
+
+}
+
+
+</script>
 
 
 </body>
