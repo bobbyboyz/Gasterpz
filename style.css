@@ -284,3 +284,32 @@ button:hover {
     display: block;
 
 }
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    gap: 18px;
+    justify-content: center;
+}
+
+
+.product-card {
+    width: 140px !important;
+    height: 140px !important;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 2px solid #ddd;
+
+    padding: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+
+}
