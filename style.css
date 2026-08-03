@@ -448,10 +448,10 @@ h2 {
     border-radius: 8px;
 }
 .category-image{
-    width:70px;
-    height:70px;
+    width:90%;
+    height:85px;
     object-fit:cover;
-    border-radius:15px;
+    border-radius:18px;
     display:block;
-    margin:15px auto 10px auto;
+    margin:10px auto 8px auto;
 }
