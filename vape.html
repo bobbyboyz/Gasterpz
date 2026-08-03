@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VAPE - Gasterpz</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="home">
+
+
+<h1>VAPE</h1>
+
+
+<div class="product-grid">
+
+
+
+<div class="product-card">
+
+
+<div class="image-box">
+FOTO
+</div>
+
+
+<div class="product-name">
+NOME PRODOTTO
+</div>
+
+
+<div class="product-buttons">
+
+
+<button onclick="ordine('NOME PRODOTTO','10 pezzi','€')">
+10<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','20 pezzi','€')">
+20<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','50 pezzi','€')">
+50<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','100 pezzi','€')">
+100<br>PEZZI<br>€
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="product-card">
+
+
+<div class="image-box">
+FOTO
+</div>
+
+
+<div class="product-name">
+NOME PRODOTTO
+</div>
+
+
+<div class="product-buttons">
+
+
+<button onclick="ordine('NOME PRODOTTO','10 pezzi','€')">
+10<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','20 pezzi','€')">
+20<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','50 pezzi','€')">
+50<br>PEZZI<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','100 pezzi','€')">
+100<br>PEZZI<br>€
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+function ordine(prodotto, quantita, prezzo) {
+
+
+let conferma = confirm(
+"Vuoi ordinare?\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo
+);
+
+
+if(conferma){
+
+
+let messaggio =
+"Nuovo ordine\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo;
+
+
+window.open(
+"https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio),
+"_blank"
+);
+
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
