@@ -3,21 +3,28 @@
    SCRIPT.JS
 ========================== */
 
+
 const tg = window.Telegram.WebApp;
 
 tg.expand();
 
+
 let cart = [];
+
 let total = 0;
 
+
+
 /* ==========================
-   APRI CATEGORIE
+   PAGINE
 ========================== */
+
 
 function hideAllPages() {
 
     document.getElementById("home").style.display = "none";
 
+
     document.querySelectorAll(".page").forEach(page => {
 
         page.style.display = "none";
@@ -26,15 +33,21 @@ function hideAllPages() {
 
 }
 
-function openCategory(category) {
+
+
+function openPage(category) {
 
     hideAllPages();
+
 
     document.getElementById(category).style.display = "block";
 
 }
 
+
+
 function goHome() {
+
 
     document.querySelectorAll(".page").forEach(page => {
 
@@ -42,85 +55,233 @@ function goHome() {
 
     });
 
+
     document.getElementById("home").style.display = "block";
 
 }
+
+
 
 /* ==========================
    CARRELLO
 ========================== */
 
+
 function toggleCart() {
 
+
     document
-        .getElementById("cartPanel")
-        .classList
-        .toggle("open");
+    .getElementById("cartPanel")
+    .classList
+    .toggle("open");
+
 
 }
+
+
+
+function addToCart(product, price) {
+
+
+    cart.push({
+
+        nome: product,
+
+        prezzo: price
+
+    });
+
+
+
+    total += price;
+
+
+
+    document.getElementById("cartCount").innerHTML = cart.length;
+
+
+
+    document.getElementById("cartItems").innerHTML +=
+
+    "<p>" + product + " - €" + price + "</p>";
+
+
+
+    document.getElementById("cartTotal").innerHTML =
+
+    "Totale €" + total;
+
+
+}
+
+
+
+/* ==========================
+   PRODOTTI
+========================== */
+
+
 const prodotti = {
-  weed: [
-    {nome: "Weed", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
-  ],
-  frozen: [
-    {nome: "Frozen/Static", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
-  ],
-  dry: [
-    {nome: "Dry", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
-  ],
-  extract: [
-    {nome: "Extract", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
-  ],
-  vape: [
-    {nome: "Vape", quantita: ["1 pezzo", "3 pezzi", "5 pezzi"]}
-  ]
+
+
+    weed: [
+
+        {nome: "Weed", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+
+    ],
+
+
+    frozen: [
+
+        {nome: "Frozen/Static", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+
+    ],
+
+
+    dry: [
+
+        {nome: "Dry", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+
+    ],
+
+
+    extract: [
+
+        {nome: "Extract", quantita: ["20g", "50g", "100g", "500g", "1000g"]}
+
+    ],
+
+
+    vape: [
+
+        {nome: "Vape", quantita: ["1 pezzo", "3 pezzi", "5 pezzi"]}
+
+    ]
+
+
 };
 
+
+
+
 function apriCategoria(categoria) {
-  const contenuto = document.getElementById("prodotti");
-  contenuto.innerHTML = "";
 
-  prodotti[categoria].forEach(prodotto => {
 
-    let box = document.createElement("div");
-    box.className = "prodotto";
+    const contenuto = document.getElementById("prodotti");
 
-    box.innerHTML = `
-      <h3>${prodotto.nome}</h3>
-      <div class="quantita">
+
+    if(!contenuto) return;
+
+
+
+    contenuto.innerHTML = "";
+
+
+
+    prodotti[categoria].forEach(prodotto => {
+
+
+
+        let box = document.createElement("div");
+
+
+        box.className = "prodotto";
+
+
+
+        box.innerHTML = `
+
+        <h3>${prodotto.nome}</h3>
+
+
+        <div class="quantita">
+
         ${prodotto.quantita.map(q => `
-          <button>${q}</button>
-        `).join("")}
-      </div>
-    `;
 
-    contenuto.appendChild(box);
-  });
+        <button>
+
+        ${q}
+
+        </button>
+
+
+        `).join("")}
+
+        </div>
+
+        `;
+
+
+
+        contenuto.appendChild(box);
+
+
+
+    });
+
+
 }
-// Apertura Telegram per invio ordine
+
+
+
+/* ==========================
+   ORDINE TELEGRAM
+========================== */
+
+
 function inviaOrdine() {
 
-  const ordineSalvato = JSON.parse(
-    localStorage.getItem("ordine")
-  );
 
-  if (!ordineSalvato) {
-    alert("Seleziona prima un prodotto");
-    return;
-  }
+    if(cart.length === 0) {
 
-  const messaggio =
-    "Ciao, vorrei informazioni per: " +
-    ordineSalvato.prodotto +
-    " quantità: " +
-    ordineSalvato.quantita;
 
-  const username = "Gasterpzzz";
+        alert("Il carrello è vuoto");
 
-  window.open(
-    "https://t.me/" +
-    username +
-    "?text=" +
-    encodeURIComponent(messaggio)
-  );
+
+        return;
+
+
+    }
+
+
+
+    let messaggio = "Ciao, vorrei ordinare:%0A";
+
+
+
+    cart.forEach(item => {
+
+
+        messaggio +=
+
+        item.nome + " €" + item.prezzo + "%0A";
+
+
+    });
+
+
+
+    messaggio +=
+
+    "Totale: €" + total;
+
+
+
+    const username = "Gasterpzzz";
+
+
+
+    window.open(
+
+        "https://t.me/" +
+
+        username +
+
+        "?text=" +
+
+        messaggio
+
+    );
+
+
 }
