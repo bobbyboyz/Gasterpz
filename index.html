@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GasTerpzzz</title>
@@ -23,46 +24,183 @@
 
 <div class="logo-box">
 
-    <img src="IMG_0935.jpeg" class="logo">
+<img src="IMG_0935.jpeg" class="logo">
 
 </div>
 
 
 
-<!-- CATEGORIE -->
+<!-- HOME -->
+
+<div id="home">
+
 
 <div class="categories">
 
 
-<div class="category-card">
-    <h2> Weed</h2>
+<div class="category-card" onclick="openPage('weed')">
+<h2>Weed</h2>
 </div>
 
 
-<div class="category-card">
-    <h2> Frozen/Static</h2>
+<div class="category-card" onclick="openPage('frozen')">
+<h2>Frozen/Static</h2>
 </div>
 
 
-<div class="category-card">
-    <h2> Dry</h2>
+<div class="category-card" onclick="openPage('dry')">
+<h2>Dry</h2>
 </div>
 
 
-<div class="category-card">
-    <h2> Extract</h2>
+<div class="category-card" onclick="openPage('extract')">
+<h2>Extract</h2>
 </div>
 
 
-<div class="category-card">
-    <h2> Vape</h2>
-</div>
-
-
+<div class="category-card" onclick="openPage('vape')">
+<h2>Vape</h2>
 </div>
 
 
 </div>
+
+</div>
+
+
+
+
+
+<!-- WEED -->
+
+<div id="weed" class="page">
+
+<button onclick="goHome()">← Home</button>
+
+<h2>Weed</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Nome Prodotto</h3>
+<p>20g • €PREZZO</p>
+<button onclick="addToCart('Weed 20g',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+
+<div class="product-card">
+<h3>Nome Prodotto</h3>
+<p>50g • €PREZZO</p>
+<button onclick="addToCart('Weed 50g',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- FROZEN -->
+
+<div id="frozen" class="page">
+
+<button onclick="goHome()">← Home</button>
+
+<h2>Frozen/Static</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Nome Prodotto</h3>
+<p>20g • €PREZZO</p>
+<button onclick="addToCart('Frozen 20g',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- DRY -->
+
+<div id="dry" class="page">
+
+<button onclick="goHome()">← Home</button>
+
+<h2>Dry</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Nome Prodotto</h3>
+<p>20g • €PREZZO</p>
+<button onclick="addToCart('Dry 20g',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- EXTRACT -->
+
+<div id="extract" class="page">
+
+<button onclick="goHome()">← Home</button>
+
+<h2>Extract</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Nome Prodotto</h3>
+<p>20g • €PREZZO</p>
+<button onclick="addToCart('Extract 20g',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- VAPE -->
+
+<div id="vape" class="page">
+
+<button onclick="goHome()">← Home</button>
+
+<h2>Vape</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Nome Vape</h3>
+<p>1 pezzo • €PREZZO</p>
+<button onclick="addToCart('Vape',PREZZO)">🛒 Aggiungi</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+<script src="script.js"></script>
 
 
 </body>
