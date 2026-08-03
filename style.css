@@ -272,3 +272,48 @@ h2 {
     border-radius:0 0 20px 20px;
     background:linear-gradient(to top, rgba(0,0,0,.35), transparent);
 }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+
+.product-card {
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+.image-box {
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.product-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.product-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.product-buttons button {
+    font-size: 11px;
+    padding: 5px;
+}
