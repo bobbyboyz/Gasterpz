@@ -1,152 +1,222 @@
 body {
     margin: 0;
     padding: 0;
-    background: #050505;
+    background: white;
     font-family: Arial, sans-serif;
-    color: white;
+    color: black;
 }
 
 
-.container {
+.home {
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
-    padding: 20px 0;
+    padding: 25px 0;
 }
 
 
-/* BOX LOGO */
+/* LOGO */
 
 .logo-box {
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto 30px auto;
-    background: #111;
-    border: 2px solid #333;
+    background: white;
+    border: 2px solid #ddd;
     border-radius: 25px;
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 
 .logo-box img {
-    width: 190px;
-    height: 190px;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
 }
 
 
-.brand-name {
-    margin-top: 10px;
-    font-size: 22px;
-    font-weight: bold;
+/* TITOLI */
+
+h1,
+h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 25px;
 }
 
 
 
-/* CASELLE CATEGORIE */
+/* GRIGLIA CASELLE */
 
-.categories {
+.categories,
+.products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 18px;
 }
 
 
-.category-btn {
-    height: 80px;
-    background: #111;
-    color: white;
-    border: 2px solid #333;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-}
 
+/* CASELLE CATEGORIE E PRODOTTI */
 
-.category-btn:hover {
-    background: #1a1a1a;
-}/* PRODOTTI */
+.category-box,
+.product-box {
 
-.product-section {
-    display: none;
-    margin-top: 25px;
-}
+    height: 120px;
 
+    background: white;
 
-.product-section h2 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 20px;
-}
+    border: 2px solid #ddd;
 
-
-/* CASELLA SINGOLO PRODOTTO */
-
-.product {
-    background: #111;
-    border: 2px solid #333;
-    border-radius: 18px;
-    height: 60px;
-    margin-bottom: 12px;
-    padding: 0 20px;
+    border-radius: 25px;
 
     display: flex;
+    justify-content: center;
     align-items: center;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* PAGINE PRODOTTO */
+
+.product-page {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* GALLERIA ORIZZONTALE */
+
+.gallery {
+
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.gallery img,
+.gallery video {
+
+    width: 280px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    border: 2px solid #ddd;
+
+}
+
+
+/* QUANTITÀ E PREZZI */
+
+.price-box {
+
+    height: 70px;
+
+    background: white;
+
+    border: 2px solid #ddd;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
 
-    font-size: 19px;
-    font-weight: bold;
-}
+    padding: 0 20px;
 
+    margin-bottom: 15px;
 
-.product span {
     font-size: 18px;
+
+    font-weight: bold;
+
 }
 
 
-/* ANIMAZIONE */
+/* PULSANTE TELEGRAM */
 
-.product-section {
-    animation: apertura 0.25s ease;
-}
+.telegram-btn {
 
+    display: block;
 
-@keyframes apertura {
+    background: black;
 
-from {
-    opacity: 0;
-    transform: translateY(15px);
-}
+    color: white;
 
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 18px;
+
+    border-radius: 25px;
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-weight: bold;
 
 }
 
 
 /* MOBILE */
 
-@media (max-width: 450px){
+@media(max-width:450px){
 
-.container {
-    width: 92%;
-}
+    .categories,
+    .products {
 
+        grid-template-columns: repeat(2,1fr);
 
-.logo-box {
-    width: 230px;
-    height: 230px;
-}
+    }
 
 
-.category-btn {
-    height: 70px;
-    font-size: 16px;
-}
+    .category-box,
+    .product-box {
+
+        height: 100px;
+
+        font-size: 17px;
+
+    }
+
+
+    .logo-box {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
 
 }
