@@ -1,32 +1,53 @@
+/* ==========================
+   GASTERPZ STYLE
+========================== */
+
+
 * {
     box-sizing: border-box;
 }
 
 
 body {
+
     margin: 0;
+
     padding: 0;
+
     background: white;
+
     font-family: Arial, sans-serif;
+
     color: #111;
+
 }
+
 
 
 .app {
+
     width: 100%;
+
     max-width: 500px;
+
     margin: auto;
+
     padding: 20px;
+
 }
 
 
 
-/* LOGO GRANDE */
+/* ==========================
+   LOGO
+========================== */
+
 
 .logo-box {
 
-    width: 280px;
-    height: 280px;
+    width: 340px;
+
+    height: 340px;
 
     margin: 20px auto 35px;
 
@@ -35,18 +56,24 @@ body {
     border-radius: 20px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
+    border: 1px solid #ddd;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 
 }
 
 
+
 .logo {
 
-    width: 90%;
-    height: 90%;
+    width: 100%;
+
+    height: 100%;
 
     object-fit: contain;
 
@@ -54,7 +81,10 @@ body {
 
 
 
-/* CATEGORIE */
+/* ==========================
+   CATEGORIE
+========================== */
+
 
 .categories {
 
@@ -78,17 +108,21 @@ body {
 
     background: white;
 
-    border-radius: 18px;
+    border-radius: 15px;
+
+    border: 1px solid #ddd;
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-end;
 
-    justify-content: center;
+    justify-content: flex-start;
 
-    text-align: center;
+    padding: 12px;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+
+    position: relative;
 
 }
 
@@ -100,11 +134,13 @@ body {
 
     margin: 0;
 
+    font-weight: bold;
+
 }
 
 
 
-/* ULTIMA CASELLA CENTRATA */
+/* ultima casella centrata */
 
 .category-card:last-child {
 
@@ -114,13 +150,17 @@ body {
 
 
 
-/* PAGINE PRODOTTI */
+/* ==========================
+   PAGINE PRODOTTI
+========================== */
+
 
 .page {
 
     display: none;
 
 }
+
 
 
 .products {
@@ -139,6 +179,8 @@ body {
 
     border-radius: 15px;
 
+    border: 1px solid #ddd;
+
     padding: 15px;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
@@ -148,9 +190,31 @@ body {
 }
 
 
+
+.product-card h3 {
+
+    margin-top: 0;
+
+}
+
+
+
+.product-card p {
+
+    margin: 10px 0;
+
+}
+
+
+
+/* ==========================
+   BOTTONI
+========================== */
+
+
 button {
 
-    border: none;
+    border: 1px solid #ddd;
 
     background: #111;
 
@@ -161,5 +225,56 @@ button {
     border-radius: 10px;
 
     cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+    transform: scale(1.03);
+
+}
+
+
+
+/* ==========================
+   CARRELLO
+========================== */
+
+
+#cartButton {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    padding: 15px;
+
+    border-radius: 50%;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+#cartPanel {
+
+    display: none;
+
+}
+
+
+
+#cartPanel.open {
+
+    display: block;
 
 }
