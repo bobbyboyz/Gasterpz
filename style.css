@@ -47,16 +47,16 @@ h1,h2{
     grid-template-columns:repeat(2,1fr);
     gap:18px;
 }
-
 .category-box{
     position:relative;
     height:175px;
+    border:2px solid #e5e5e5;
     border-radius:25px;
     overflow:hidden;
-    text-decoration:none;
     background:#fff;
-    border:2px solid #e5e5e5;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
+    text-decoration:none;
+    display:block;
 }
 
 .category-image{
@@ -76,11 +76,13 @@ h1,h2{
 
     text-align:center;
 
-    color:white;
+    color:#fff;
     font-size:15px;
     font-weight:bold;
 
-    background:linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,0));
+    background:linear-gradient(to top,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,0));
 }
 /* PAGINE PRODOTTI */
 
