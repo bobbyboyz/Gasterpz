@@ -2,65 +2,62 @@
 <html lang="it">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gasterpz</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasterpz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <button id="backButton" onclick="goBack()" style="display:none;">
-← Indietro
+    ← Indietro
 </button>
 
 <div class="home">
 
-<!-- LOGO -->
-<div class="header">
-    <img src="IMG_9609.png" class="logo">
-</div>
+    <!-- LOGO -->
+    <div class="header">
+        <img src="IMG_9609.png" class="logo" alt="Logo">
+    </div>
 
-<div id="app">
-</div>
+    <!-- CATEGORIE -->
+    <div class="categories">
 
-<p>TEST</p>
-<!-- CATEGORIE -->
-<div class="categories">
+        <a href="weed.html" class="category-box small-box">
+            <img src="IMG_4618.png" class="category-image" alt="Weed">
+            <span class="category-title">WEED</span>
+        </a>
 
-<a href="weed.html" class="category-box small-box">
-    <img src="IMG_4618.png" class="category-image" alt="Weed">
-    <span class="category-title">WEED</span>
-</a>
+        <a href="frozen.html" class="category-box small-box">
+            <img src="979F0993-03B6-49B8-B0B4-79C0DF615E93.png" class="category-image" alt="Frozen">
+            <span class="category-title">FROZEN / STATIC</span>
+        </a>
 
-<a href="frozen.html" class="category-box small-box">
-    <img src="979F0993-03B6-49B8-B0B4-79C0DF615E93.png" class="category-image" alt="Frozen">
-    <span class="category-title">FROZEN / STATIC</span>
-</a>
+        <a href="dry.html" class="category-box small-box">
+            <img src="DBDFDE58-4C1D-4CE2-913C-14B93217B32D.png" class="category-image" alt="Dry">
+            <span class="category-title">DRY</span>
+        </a>
 
-<a href="dry.html" class="category-box small-box">
-    <img src="DBDFDE58-4C1D-4CE2-913C-14B93217B32D.png" class="category-image" alt="Dry">
-    <span class="category-title">DRY</span>
-</a>
+        <a href="extract.html" class="category-box small-box">
+            <img src="C50EDA08-55AC-43BD-BDC5-7EF8478F6CE8.png" class="category-image" alt="Extract">
+            <span class="category-title">EXTRACT</span>
+        </a>
 
-<a href="extract.html" class="category-box small-box">
-    <img src="C50EDA08-55AC-43BD-BDC5-7EF8478F6CE8.png" class="category-image" alt="Extract">
-    <span class="category-title">EXTRACT</span>
-</a>
+        <a href="vape.html" class="category-box small-box">
+            <img src="8D44BF80-0CFE-41BE-907B-E7FB4740A280.png" class="category-image" alt="Vape">
+            <span class="category-title">VAPE</span>
+        </a>
 
-<a href="vape.html" class="category-box small-box">
-    <img src="8D44BF80-0CFE-41BE-907B-E7FB4740A280.png" class="category-image" alt="Vape">
-    <span class="category-title">VAPE</span>
-</a>
+    </div>
 
 </div>
 
-</div>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 </body>
-
 </html>
