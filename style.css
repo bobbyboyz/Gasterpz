@@ -151,6 +151,7 @@ h1,h2{
     font-size:9px;
     font-weight:bold;
     cursor:pointer;
+    color:#000;
 }
 
 .product-buttons button:hover{
