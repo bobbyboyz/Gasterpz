@@ -256,6 +256,28 @@ h1,h2{
 }
 
 .back-button{
+    .back-button{
+    ...
+    z-index:999;
+}
+
+.img-preview{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.img-preview img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
     position:fixed;
     top:15px;
     right:15px;
