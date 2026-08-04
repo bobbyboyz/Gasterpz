@@ -47,6 +47,7 @@ h1,h2{
     grid-template-columns:repeat(2,1fr);
     gap:18px;
 }
+
 .category-box{
     position:relative;
     height:175px;
@@ -72,33 +73,26 @@ h1,h2{
     left:0;
     right:0;
     bottom:0;
-
     padding:12px 0;
-
     text-align:center;
-
     color:#fff;
     font-size:15px;
     font-weight:bold;
-
     background:linear-gradient(to top,
     rgba(0,0,0,.55),
     rgba(0,0,0,0));
 }
-/* PAGINE PRODOTTI */
 
+/* PAGINE PRODOTTI */
 .product-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
     width:100%;
 }
 
 .product-card{
-
-    .product-card{
-
-    height:210px;
+    height:220px;
     background:#fff;
     border:2px solid #e5e5e5;
     border-radius:25px;
@@ -109,219 +103,158 @@ h1,h2{
 
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
     align-items:center;
+}
 
 .image-box{
-
     width:100%;
-    height:120px;
+    height:110px;
 
-    overflow:hidden;
-
+    border:2px solid #e5e5e5;
     border-radius:18px;
 
+    overflow:hidden;
     background:#f7f7f7;
 
     display:flex;
     justify-content:center;
     align-items:center;
-
 }
 
 .image-box img{
-
     width:100%;
     height:100%;
     object-fit:cover;
-
 }
-.product-name{
 
+.product-name{
+    margin-top:8px;
     font-size:12px;
     font-weight:bold;
     text-align:center;
-
 }
 
 .product-buttons{
+    margin-top:auto;
 
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:4px;
-
 }
 
 .product-buttons button{
-
     border:none;
     background:#f2f2f2;
     border-radius:8px;
-
     padding:4px 6px;
-
     font-size:9px;
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
 .product-buttons button:hover{
-
     background:#e7e7e7;
-
 }
+
 /* PAGINA PRODOTTO */
 
 .product-page{
-
     width:90%;
     max-width:500px;
     margin:auto;
-
 }
-
 
 /* GALLERIA */
 
 .gallery{
-
     display:flex;
     overflow-x:auto;
     gap:15px;
     margin-bottom:25px;
-
 }
 
 .gallery img,
 .gallery video{
-
     width:280px;
     height:280px;
-
     object-fit:cover;
-
     border-radius:25px;
     border:2px solid #ddd;
-
 }
-
 
 /* PREZZI */
 
 .price-box{
-
     height:70px;
-
     background:#fff;
-
     border:2px solid #ddd;
-
     border-radius:20px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 20px;
-
     margin-bottom:15px;
-
     font-size:18px;
     font-weight:bold;
-
 }
-
 
 /* TELEGRAM */
 
 .telegram-btn{
-
     display:block;
-
     background:#000;
     color:#fff;
-
     text-decoration:none;
-
     text-align:center;
-
     padding:18px;
-
     border-radius:25px;
-
     margin-top:25px;
-
     font-size:20px;
     font-weight:bold;
-
 }
-
 
 /* MOBILE */
 
 @media(max-width:450px){
 
 .home{
-
     width:92%;
-
 }
 
 .logo-box{
-
     width:220px;
     height:220px;
-
 }
 
 .categories{
-
     gap:15px;
-
 }
 
 .category-box{
-
     height:165px;
-
-}
-
-.category-image{
-
-    height:120px;
-
 }
 
 .category-title{
-
     font-size:16px;
-
 }
 
 .product-card{
-
-    height:260px;
-
+    height:220px;
 }
 
 .image-box{
-
-    width:55px;
-    height:55px;
-
+    width:100%;
+    height:110px;
 }
 
 .product-buttons button{
-
     font-size:9px;
     padding:4px 5px;
-
 }
 
 }
+
 .back-button{
     position:fixed;
     top:15px;
@@ -342,4 +275,3 @@ h1,h2{
     cursor:pointer;
     z-index:999;
 }
-
