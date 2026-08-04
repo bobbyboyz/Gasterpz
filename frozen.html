@@ -12,37 +12,27 @@
 
 </head>
 
-
 <body>
-  <button class="back-button" onclick="history.back()">
+
+<button class="back-button" onclick="history.back()">
     ← Indietro
 </button>
 
-
 <div class="home" style="padding-top:55px;">
-
-
-
-
 
 <div class="product-grid">
 
-
 <div class="product-card">
-
 
 <div class="image-box">
 FOTO
 </div>
 
-
 <div class="product-name">
 NOME PRODOTTO
 </div>
 
-
 <div class="product-buttons">
-
 
 <button onclick="ordine('NOME PRODOTTO','20g','€')">20g<br>€</button>
 <button onclick="ordine('NOME PRODOTTO','50g','€')">50g<br>€</button>
@@ -50,30 +40,21 @@ NOME PRODOTTO
 <button onclick="ordine('NOME PRODOTTO','500g','€')">500g<br>€</button>
 <button onclick="ordine('NOME PRODOTTO','1000g','€')">1000g<br>€</button>
 
-
 </div>
 
-
 </div>
-
-
-
 
 <div class="product-card">
-
 
 <div class="image-box">
 FOTO
 </div>
 
-
 <div class="product-name">
 NOME PRODOTTO
 </div>
 
-
 <div class="product-buttons">
-
 
 <button onclick="ordine('NOME PRODOTTO','20g','€')">20g<br>€</button>
 <button onclick="ordine('NOME PRODOTTO','50g','€')">50g<br>€</button>
@@ -81,18 +62,43 @@ NOME PRODOTTO
 <button onclick="ordine('NOME PRODOTTO','500g','€')">500g<br>€</button>
 <button onclick="ordine('NOME PRODOTTO','1000g','€')">1000g<br>€</button>
 
+</div>
 
 </div>
 
+</div>
 
 </div>
 
+<script>
 
-</div>
+function ordine(prodotto, quantita, prezzo) {
 
+let conferma = confirm(
+"Vuoi ordinare?\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo
+);
 
-</div>
+if(conferma){
 
+let messaggio =
+"Nuovo ordine\n\n" +
+"Prodotto: " + prodotto +
+"\nQuantità: " + quantita +
+"\nPrezzo: " + prezzo;
+
+window.open(
+"https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio),
+"_blank"
+);
+
+}
+
+}
+
+</script>
 
 </body>
 
