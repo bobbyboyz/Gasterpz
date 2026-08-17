@@ -118,7 +118,35 @@ NOME PRODOTTO
 
 </div>
 
+<script>
 
+function ordine(prodotto, quantita, prezzo) {
+
+    let conferma = confirm(
+        "Vuoi ordinare?\n\n" +
+        "Prodotto: " + prodotto +
+        "\nQuantità: " + quantita +
+        "\nPrezzo: " + prezzo
+    );
+
+    if (conferma) {
+
+        let messaggio =
+            "Nuovo ordine\n\n" +
+            "Prodotto: " + prodotto +
+            "\nQuantità: " + quantita +
+            "\nPrezzo: " + prezzo;
+
+        window.open(
+            "https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio),
+            "_blank"
+        );
+
+    }
+
+}
+
+</script>
 </body>
 
 </html>
