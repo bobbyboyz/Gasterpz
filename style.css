@@ -287,4 +287,9 @@ h1,h2{
     right: 15px;
     left: auto;
     z-index: 9999;
+
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
 }
