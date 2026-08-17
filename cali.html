@@ -33,7 +33,9 @@
 
 
 <div class="image-box">
-    <img src="IMG_0914.jpeg" alt="CALI" onclick="openImage(this.src)">
+
+    <img src="IMG_0914.jpeg" alt="CALI">
+
 </div>
 
 
@@ -162,7 +164,25 @@ window.open(
 
 </script>
 
+<div id="imgPreview" class="img-preview" onclick="closeImage()">
+    <img id="previewImg">
+</div>
 
+<script>
+const preview = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+
+document.querySelectorAll(".image-box img").forEach(img => {
+    img.addEventListener("click", function () {
+        previewImg.src = this.src;
+        preview.style.display = "flex";
+    });
+});
+
+function closeImage() {
+    preview.style.display = "none";
+}
+</script>
 </body>
 
 </html>
