@@ -22,53 +22,89 @@
 
 <div class="product-grid">
 
-<div class="product-card">
 
-<div class="image-box">
-FOTO
-</div>
-
-<div class="LOONELY FARM FROZEN ⭐️>
-
-</div>
-
-<div class="product-buttons">
-
-<button onclick="ordine('NOME PRODOTTO','20g','€')">20g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','50g','€')">50g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','100g','€')">100g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','500g','€')">500g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','1000g','€')">1000g<br>€</button>
-
-</div>
-
-</div>
+<!-- PRODOTTO 1 -->
 
 <div class="product-card">
 
 <div class="image-box">
-FOTO
+    <img src="2026-05-26@10-21-31.jpeg" alt="LOONELY FARM FROZEN ⭐️">
 </div>
 
 <div class="product-name">
-NOME PRODOTTO
+    LOONELY FARM FROZEN ⭐️
 </div>
 
 <div class="product-buttons">
 
-<button onclick="ordine('NOME PRODOTTO','20g','€')">20g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','50g','€')">50g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','100g','€')">100g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','500g','€')">500g<br>€</button>
-<button onclick="ordine('NOME PRODOTTO','1000g','€')">1000g<br>€</button>
+<button onclick="ordine('LOONELY FARM FROZEN ⭐️','20g','€')">
+    20g<br>€
+</button>
+
+<button onclick="ordine('LOONELY FARM FROZEN ⭐️','50g','€')">
+    50g<br>€
+</button>
+
+<button onclick="ordine('LOONELY FARM FROZEN ⭐️','100g','€')">
+    100g<br>€
+</button>
+
+<button onclick="ordine('LOONELY FARM FROZEN ⭐️','500g','€')">
+    500g<br>€
+</button>
+
+<button onclick="ordine('LOONELY FARM FROZEN ⭐️','1000g','€')">
+    1000g<br>€
+</button>
 
 </div>
 
 </div>
 
+
+<!-- PRODOTTO 2 -->
+
+<div class="product-card">
+
+<div class="image-box">
+    FOTO
+</div>
+
+<div class="product-name">
+    NOME PRODOTTO
+</div>
+
+<div class="product-buttons">
+
+<button onclick="ordine('NOME PRODOTTO','20g','€')">
+    20g<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','50g','€')">
+    50g<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','100g','€')">
+    100g<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','500g','€')">
+    500g<br>€
+</button>
+
+<button onclick="ordine('NOME PRODOTTO','1000g','€')">
+    1000g<br>€
+</button>
+
 </div>
 
 </div>
+
+
+</div>
+
+</div>
+
 
 <script>
 
@@ -95,6 +131,37 @@ window.open(
 );
 
 }
+
+}
+
+</script>
+
+
+<!-- ZOOM FOTO -->
+
+<div id="imgPreview" class="img-preview" onclick="closeImage()">
+    <img id="previewImg">
+</div>
+
+<script>
+
+const preview = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+
+document.querySelectorAll(".image-box img").forEach(img => {
+
+    img.addEventListener("click", function () {
+
+        previewImg.src = this.src;
+        preview.style.display = "flex";
+
+    });
+
+});
+
+function closeImage() {
+
+    preview.style.display = "none";
 
 }
 
