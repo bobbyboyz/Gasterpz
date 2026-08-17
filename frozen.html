@@ -118,9 +118,16 @@ NOME PRODOTTO
 </div>
 
 
+<!-- ZOOM -->
+
+<div id="imgPreview" class="img-preview" onclick="closeImage()">
+    <img id="previewImg">
+</div>
+
+
 <script>
 
-/* ORDINI */
+/* ORDINE */
 
 function ordine(prodotto, quantita, prezzo) {
 
@@ -149,7 +156,7 @@ window.open(
 }
 
 
-/* FOTO FROZEN */
+/* FOTO */
 
 const frozenPhotos = [
     "2026-05-26@10-21-31.jpeg",
@@ -157,6 +164,13 @@ const frozenPhotos = [
 ];
 
 let frozenIndex = 0;
+
+const frozenPhoto = document.getElementById("frozenPhoto");
+const preview = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+
+
+/* CAMBIO FOTO */
 
 function cambiaFoto(direzione, event) {
 
@@ -172,38 +186,26 @@ if(frozenIndex >= frozenPhotos.length){
     frozenIndex = 0;
 }
 
-document.getElementById("frozenPhoto").src =
-    frozenPhotos[frozenIndex];
+frozenPhoto.src = frozenPhotos[frozenIndex];
 
 }
 
 
-/* ZOOM FOTO */
+/* ZOOM */
 
-const preview = document.getElementById("imgPreview");
-const previewImg = document.getElementById("previewImg");
+frozenPhoto.addEventListener("click", function(event) {
 
-</script>
+event.stopPropagation();
 
-
-<div id="imgPreview" class="img-preview" onclick="closeImage()">
-    <img id="previewImg">
-</div>
-
-
-<script>
-
-document.getElementById("frozenPhoto").addEventListener("click", function () {
-
-    previewImg.src = this.src;
-    preview.style.display = "flex";
+previewImg.src = this.src;
+preview.style.display = "flex";
 
 });
 
 
 function closeImage() {
 
-    preview.style.display = "none";
+preview.style.display = "none";
 
 }
 
@@ -212,7 +214,7 @@ function closeImage() {
 
 <style>
 
-/* SOLO LE FRECCE DELLA GALLERIA FROZEN */
+/* FRECCE - SOLO GALLERIA PRODOTTO */
 
 .product-gallery {
     position: relative;
