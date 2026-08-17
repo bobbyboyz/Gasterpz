@@ -27,8 +27,20 @@
 
 <div class="product-card">
 
-<div class="image-box">
-    <img src="2026-05-26@10-21-31.jpeg" alt="LOONELY FARM FROZEN ⭐️">
+<div class="image-box product-gallery">
+
+<button class="gallery-arrow left" onclick="cambiaFoto(-1, event)">
+    ‹
+</button>
+
+<img id="frozenPhoto"
+     src="2026-05-26@10-21-31.jpeg"
+     alt="LOONELY FARM FROZEN ⭐️">
+
+<button class="gallery-arrow right" onclick="cambiaFoto(1, event)">
+    ›
+</button>
+
 </div>
 
 <div class="product-name">
@@ -108,6 +120,8 @@ NOME PRODOTTO
 
 <script>
 
+/* ORDINI */
+
 function ordine(prodotto, quantita, prezzo) {
 
 let conferma = confirm(
@@ -134,30 +148,58 @@ window.open(
 
 }
 
+
+/* FOTO FROZEN */
+
+const frozenPhotos = [
+    "2026-05-26@10-21-31.jpeg",
+    "IMG_0946.jpeg"
+];
+
+let frozenIndex = 0;
+
+function cambiaFoto(direzione, event) {
+
+event.stopPropagation();
+
+frozenIndex += direzione;
+
+if(frozenIndex < 0){
+    frozenIndex = frozenPhotos.length - 1;
+}
+
+if(frozenIndex >= frozenPhotos.length){
+    frozenIndex = 0;
+}
+
+document.getElementById("frozenPhoto").src =
+    frozenPhotos[frozenIndex];
+
+}
+
+
+/* ZOOM FOTO */
+
+const preview = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+
 </script>
 
-
-<!-- ZOOM FOTO -->
 
 <div id="imgPreview" class="img-preview" onclick="closeImage()">
     <img id="previewImg">
 </div>
 
+
 <script>
 
-const preview = document.getElementById("imgPreview");
-const previewImg = document.getElementById("previewImg");
+document.getElementById("frozenPhoto").addEventListener("click", function () {
 
-document.querySelectorAll(".image-box img").forEach(img => {
-
-    img.addEventListener("click", function () {
-
-        previewImg.src = this.src;
-        preview.style.display = "flex";
-
-    });
+    previewImg.src = this.src;
+    preview.style.display = "flex";
 
 });
+
 
 function closeImage() {
 
@@ -166,6 +208,48 @@ function closeImage() {
 }
 
 </script>
+
+
+<style>
+
+/* SOLO LE FRECCE DELLA GALLERIA FROZEN */
+
+.product-gallery {
+    position: relative;
+}
+
+.product-gallery .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.product-gallery .gallery-arrow.left {
+    left: 5px;
+}
+
+.product-gallery .gallery-arrow.right {
+    right: 5px;
+}
+
+.product-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+</style>
 
 
 </body>
