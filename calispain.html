@@ -12,7 +12,6 @@
 
 </head>
 
-
 <body>
 
 <button class="back-button" onclick="history.back()">
@@ -21,132 +20,132 @@
 
 <div class="home" style="padding-top:55px;">
 
+    <h1 class="page-title">CALI SPAIN</h1>
+
+    <div class="product-grid">
+
+        <!-- PRODOTTO 1 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img src="IMG_0919.png" alt="CALI SPAIN">
+            </div>
+
+            <div class="product-name">
+                CALI SPAIN
+            </div>
+
+            <div class="product-buttons">
+
+                <button onclick="ordine('CALI SPAIN', '20g', '€')">
+                    20g<br>
+                    <span>€</span>
+                </button>
+
+                <button onclick="ordine('CALI SPAIN', '50g', '€')">
+                    50g<br>
+                    <span>€</span>
+                </button>
+
+                <button onclick="ordine('CALI SPAIN', '100g', '€')">
+                    100g<br>
+                    <span>€</span>
+                </button>
+
+                <button onclick="ordine('CALI SPAIN', '500g', '€')">
+                    500g<br>
+                    <span>€</span>
+                </button>
+
+                <button onclick="ordine('CALI SPAIN', '1000g', '€')">
+                    1000g<br>
+                    <span>€</span>
+                </button>
+
+            </div>
+
+        </div>
 
 
+        <!-- PRODOTTO 2 -->
+        <div class="product-card">
 
+            <div class="image-box">
+                <img src="IMG_0935.jpeg" alt="CALI SPAIN 2">
+            </div>
 
-<div class="product-grid">
+            <div class="product-name">
+                CALI SPAIN 2
+            </div>
 
+            <div class="product-buttons">
 
-<div class="product-card">
+                <button onclick="ordine('CALI SPAIN 2', '20g', '€')">
+                    20g<br>
+                    <span>€</span>
+                </button>
 
+                <button onclick="ordine('CALI SPAIN 2', '50g', '€')">
+                    50g<br>
+                    <span>€</span>
+                </button>
 
-<div class="image-box">
-FOTO
-</div>
+                <button onclick="ordine('CALI SPAIN 2', '100g', '€')">
+                    100g<br>
+                    <span>€</span>
+                </button>
 
+                <button onclick="ordine('CALI SPAIN 2', '500g', '€')">
+                    500g<br>
+                    <span>€</span>
+                </button>
 
-<div class="product-name">
-NOME PRODOTTO
-</div>
+                <button onclick="ordine('CALI SPAIN 2', '1000g', '€')">
+                    1000g<br>
+                    <span>€</span>
+                </button>
 
+            </div>
 
-<div class="product-buttons">
+        </div>
 
-<button>
-20g<br>€
-</button>
-
-<button>
-50g<br>€
-</button>
-
-<button>
-100g<br>€
-</button>
-
-<button>
-500g<br>€
-</button>
-
-<button>
-1000g<br>€
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="product-card">
-
-
-<div class="image-box">
-FOTO
-</div>
-
-
-<div class="product-name">
-NOME PRODOTTO
-</div>
-
-
-<div class="product-buttons">
-
-<button>
-20g<br>€
-</button>
-
-<button>
-50g<br>€
-</button>
-
-<button>
-100g<br>€
-</button>
-
-<button>
-500g<br>€
-</button>
-
-<button>
-1000g<br>€
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </div>
+
 
 <script>
 
 function ordine(prodotto, quantita, prezzo) {
 
-    let conferma = confirm(
-        "Vuoi ordinare?\n\n" +
-        "Prodotto: " + prodotto +
-        "\nQuantità: " + quantita +
-        "\nPrezzo: " + prezzo
+    const conferma = confirm(
+        "CONFERMA ORDINE\n\n" +
+        "Prodotto: " + prodotto + "\n" +
+        "Quantità: " + quantita + "\n" +
+        "Prezzo: " + prezzo + "\n\n" +
+        "Vuoi procedere?"
     );
 
-    if (conferma) {
-
-        let messaggio =
-            "Nuovo ordine\n\n" +
-            "Prodotto: " + prodotto +
-            "\nQuantità: " + quantita +
-            "\nPrezzo: " + prezzo;
-
-        window.open(
-            "https://t.me/Gasterpzzz?text=" + encodeURIComponent(messaggio),
-            "_blank"
-        );
-
+    if (!conferma) {
+        return;
     }
+
+    const messaggio =
+        "🛒 NUOVO ORDINE\n\n" +
+        "📦 Prodotto: " + prodotto + "\n" +
+        "⚖️ Quantità: " + quantita + "\n" +
+        "💰 Prezzo: " + prezzo;
+
+    const telegramURL =
+        "https://t.me/Gasterpzzz?text=" +
+        encodeURIComponent(messaggio);
+
+    window.open(telegramURL, "_blank");
 
 }
 
 </script>
+
 </body>
 
 </html>
