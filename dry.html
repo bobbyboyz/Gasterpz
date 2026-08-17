@@ -12,98 +12,129 @@
 
 </head>
 
-
 <body>
-  <button class="back-button" onclick="history.back()">
+
+<button class="back-button" onclick="history.back()">
     ← Indietro
 </button>
 
-
 <div class="home" style="padding-top:55px;">
 
+    <h1 class="page-title">DRY</h1>
+
+    <div class="product-grid">
+
+        <!-- PRODOTTO 1 -->
+        <div class="product-card">
+
+            <div class="image-box">
+                <img src="IMG_4618.png" alt="DRY">
+            </div>
+
+            <div class="product-name">
+                NOME PRODOTTO
+            </div>
+
+            <div class="product-buttons">
+
+                <button onclick="ordine('NOME PRODOTTO', '20g', '€')">
+                    20g<br>€
+                </button>
+
+                <button onclick="ordine('NOME PRODOTTO', '50g', '€')">
+                    50g<br>€
+                </button>
+
+                <button onclick="ordine('NOME PRODOTTO', '100g', '€')">
+                    100g<br>€
+                </button>
+
+                <button onclick="ordine('NOME PRODOTTO', '500g', '€')">
+                    500g<br>€
+                </button>
+
+                <button onclick="ordine('NOME PRODOTTO', '1000g', '€')">
+                    1000g<br>€
+                </button>
+
+            </div>
+
+        </div>
 
 
+        <!-- PRODOTTO 2 -->
+        <div class="product-card">
 
+            <div class="image-box">
+                <img src="IMG_9609.png" alt="DRY 2">
+            </div>
 
-<div class="product-grid">
+            <div class="product-name">
+                NOME PRODOTTO 2
+            </div>
 
+            <div class="product-buttons">
 
+                <button onclick="ordine('NOME PRODOTTO 2', '20g', '€')">
+                    20g<br>€
+                </button>
 
-<div class="product-card">
+                <button onclick="ordine('NOME PRODOTTO 2', '50g', '€')">
+                    50g<br>€
+                </button>
 
+                <button onclick="ordine('NOME PRODOTTO 2', '100g', '€')">
+                    100g<br>€
+                </button>
 
-<div class="image-box">
-FOTO
+                <button onclick="ordine('NOME PRODOTTO 2', '500g', '€')">
+                    500g<br>€
+                </button>
+
+                <button onclick="ordine('NOME PRODOTTO 2', '1000g', '€')">
+                    1000g<br>€
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<div class="product-name">
-NOME PRODOTTO
-</div>
+<script>
 
+function ordine(prodotto, quantita, prezzo) {
 
-<div class="product-buttons">
+    const conferma = confirm(
+        "CONFERMA ORDINE\n\n" +
+        "Prodotto: " + prodotto + "\n" +
+        "Quantità: " + quantita + "\n" +
+        "Prezzo: " + prezzo + "\n\n" +
+        "Vuoi procedere?"
+    );
 
+    if (!conferma) {
+        return;
+    }
 
-<button>20g<br>€</button>
+    const messaggio =
+        "🛒 NUOVO ORDINE\n\n" +
+        "📦 Prodotto: " + prodotto + "\n" +
+        "⚖️ Quantità: " + quantita + "\n" +
+        "💰 Prezzo: " + prezzo;
 
-<button>50g<br>€</button>
+    const telegramURL =
+        "https://t.me/Gasterpzzz?text=" +
+        encodeURIComponent(messaggio);
 
-<button>100g<br>€</button>
+    window.open(telegramURL, "_blank");
 
-<button>500g<br>€</button>
+}
 
-<button>1000g<br>€</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="image-box">
-FOTO
-</div>
-
-
-<div class="product-name">
-NOME PRODOTTO
-</div>
-
-
-<div class="product-buttons">
-
-
-<button>20g<br>€</button>
-
-<button>50g<br>€</button>
-
-<button>100g<br>€</button>
-
-<button>500g<br>€</button>
-
-<button>1000g<br>€</button>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
+</script>
 
 </body>
 
